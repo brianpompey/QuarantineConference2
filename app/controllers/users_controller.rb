@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
+        redirect_to user_interest_path(@user)
     end
 
 
