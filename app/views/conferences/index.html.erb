@@ -1,0 +1,38 @@
+<h1>Remote Conferences</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="7"></th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Date</strong></td>
+        <td><strong>Time</strong></td>
+        <td><strong>Minimum Donation</strong></td>
+        <td><strong>Keynote</strong></td>
+        <td><strong>Category</strong></td>
+        <td><strong>Some Workshops</strong></td>
+        </tr>
+
+        <% @conferences.each do |conf| %>
+
+            <tr>
+                <td><%= link_to "#{conf.name}", conference_path(conf) %></td>
+                <td><%= conf.date %></td>
+                <td><%= conf.time %></td>
+                <td><%= conf.min_donation %></td>
+                <td><%= conf.keynote %></td>
+                <td><%= conf.category %></td>
+                <td><%= conf.workshops %></td>
+            </tr>
+
+        <% end %>
+
+
+    </tbody>
+</table>
