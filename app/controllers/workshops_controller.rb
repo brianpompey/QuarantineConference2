@@ -13,6 +13,6 @@ class WorkshopsController < ApplicationController
     private
 
     def workshop_params
-        params.require(:workshop).permit(:name, :description)
+        params.require(:workshop).permit(:name, :description, :conference_id)
     end
 end

@@ -5,7 +5,7 @@ class UserInterestsController < ApplicationController
 
     def create
         @user = User.find(params[:id])
-        @user_interest = UserInterest.new(user_interest_params)
+        @user.user_interest = UserInterest.new(user_interest_params)
         redirect_to user_path(@user)
     end
 
@@ -13,6 +13,6 @@ class UserInterestsController < ApplicationController
     private
 
     def user_interest_params
-        params.require(:user_interest).permit(:school, :company, :work_experience, :looking_for_work, :code_skills, :submit_resume)
+        params.require(:user_interest).permit(:school, :company, :work_experience, :looking_for_work, :code_skills, :user_id)
     end
 end
