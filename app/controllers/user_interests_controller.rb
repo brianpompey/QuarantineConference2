@@ -6,6 +6,7 @@ class UserInterestsController < ApplicationController
     def create
         @user = User.find(params[:id])
         @user_interest = User_interest.new(user_interest_params)
+        redirect_to user_path(@user)
     end
 
 

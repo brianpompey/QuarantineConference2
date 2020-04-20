@@ -15,5 +15,4 @@ class WorkshopsController < ApplicationController
     def workshop_params
         params.require(:workshop).permit(:name, :description)
     end
-    end
 end
