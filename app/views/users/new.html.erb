@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+body {background-color: #f0f0f0;}
+</style>
+</head>
+
+<h1 align="center">Sign Up Here</h1>
+<img src="http://www.caribbean360.com/wp-content/uploads/2020/02/coronavirus-quarantine.jpg" alt="quarantine pic" height="300" width="600">
+
+<%= form_for @user do |f| %>
+
+    <div class="form-group">
+    <%= f.label :name, "Name:" %>
+    <br>
+    <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :email, "Email:"  %>
+    <%= f.text_field :email, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :password, "Password:" %>
+    <%= f.password_field :password, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :admin, "Check box if you are a site admin" %>
+    <%= f.check_box :admin, class: "form-check-input" %>
+    </div>
+
+
+    <div class="actions">
+    <%= f.submit class:"btn btn-primary" %>
+    </div>
+
+<% end %>
+
+
+
+
+
+</html>
