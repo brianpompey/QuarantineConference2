@@ -9,7 +9,8 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        redirect_to user_interest_path(@user)
+        session[:user_id] = @user.id
+        redirect_to new_user_user_interest_path(@user)
     end
 
 
