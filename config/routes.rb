@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   post '/user_interests', to: 'user_interests#create'
   #after new user submits user_interest form, the header nav bar will show up that gives them options
 
-  get '/signin', to: 'session#new', as: 'signin'
+  get '/login', to: 'sessions#new', as: 'login'
 
-  post '/session', to: 'session#create', as: 'session'
+  post '/session', to: 'sessions#create', as: 'session'
 
-  delete '/session/', to: 'session#destroy'
+  delete '/session/', to: 'sessions#destroy'
 
   post '/donations', to: 'donations#create'
 
