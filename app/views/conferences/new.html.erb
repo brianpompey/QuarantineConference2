@@ -13,9 +13,15 @@
         </div>
 
         <div class="form-group">
-        <%= f.label :date_and_time, "Date and Time:" %>
+        <%= f.label :date, "Date:" %>
         <br>
-        <%= f.datetime_local_field :date_and_time, class: "form-control" %>
+        <%= f.date_field :date, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label :time, "Time:" %>
+        <br>
+        <%= f.time_field :time, class: "form-control" %>
         </div>
 
         <div class="form-group">

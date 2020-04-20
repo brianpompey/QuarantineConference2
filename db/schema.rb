@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_154449) do
+ActiveRecord::Schema.define(version: 2020_04_20_231113) do
 
   create_table "conferences", force: :cascade do |t|
     t.string "name"
-    t.datetime "date_and_time"
     t.integer "min_donation", default: 0
     t.string "keynote"
     t.text "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "date"
+    t.time "time"
   end
 
   create_table "donations", force: :cascade do |t|
