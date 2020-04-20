@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<h1>New Conference</h1>
+
+    <%= form_with model: @conference do |f| %>
+        <div class="form-group">
+        <%= f.label :name, "Name:" %>
+        <br>
+        <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label :date_and_time, "Date and Time:" %>
+        <br>
+        <%= f.datetime_local_field :date_and_time, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label :min_donation, "Minimum Donation:" %>
+        <br>
+        <%= f.number_field :min_donation, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label :keynote, "Keynote:" %>
+        <br>
+        <%= f.text_field :keynote, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label :category, "Category:" %>
+        <br>
+        <%= f.text_field :category, class: "form-control" %>
+        </div>
+
+        <div class="actions">
+        <%= f.submit class:"btn btn-primary" %>
+        </div>
+
+    <% end %>
+
+
+
+</html>
