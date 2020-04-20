@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   post '/donations', to: 'donations#create'
 
-  #only admin can do these..
+  #only admin can do these.. Admin must enter a specific password 
   get '/users', to: 'users#index'
 
   get '/conferences/new', to: 'conferences#new'
