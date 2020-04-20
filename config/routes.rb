@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'conferences#index'
 
   get '/signup', to: 'users#new'
+
+  #add interest route that comes from user id
+  #get '/add_interest', to:
   
   resources :users do
     resources :user_interests
