@@ -4,8 +4,7 @@ class UserInterestsController < ApplicationController
     end
 
     def create
-        byebug
-        @user = User.find(params[:id])
+        
         @user.user_interest = UserInterest.new(user_interest_params)
         redirect_to user_path(@user)
     end
