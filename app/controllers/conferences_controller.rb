@@ -4,6 +4,8 @@ class ConferencesController < ApplicationController
         @conferences = Conference.all
     end
 
+
+    #only admins can add/edit conferences
     def new
         @conference = Conference.new
     end
