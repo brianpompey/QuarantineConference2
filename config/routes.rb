@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 
   post '/users', to: 'users#create'
 
+  get '/users/:id/user_interests/new', to: 'user_interests#new'
+
   get '/users/:id', to: 'users#show'
 
-  get '/users/:id/user_interests/new', to: 'user_interests#new'
+  
 
   post '/user_interests', to: 'user_interests#create'
   #after new user submits user_interest form, the header nav bar will show up that gives them options

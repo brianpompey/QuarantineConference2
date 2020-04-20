@@ -13,6 +13,10 @@ class UsersController < ApplicationController
         redirect_to "/users/#{@user.id}/user_interests/new"
     end
 
+    def show
+        @user = User.find(params[:id])
+    end
+
 
 
     private
