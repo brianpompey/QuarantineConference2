@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/users/:id/user_interests/new', to: 'user_interests#new'
 
   post '/user_interests', to: 'user_interests#create'
+  #after new user submits user_interest form, the header nav bar will show up that gives them options
 
   get '/signin', to: 'session#new', as: 'signin'
 
