@@ -4,9 +4,24 @@
 </head>
 <body>
 
-<%= @user.name %>
-<%= @user.user_interest.school %>
-<%= @user.name %>
+<h1>Welcome, <%= @user.name %>!!!</h1>
+<h3>This is your member portal where you can review</h3>
+<h3>All of the Information you've submitted about yourself</h3>
+<h3>A free signup is all you'll need to be able to register</h3>
+<h3>For any of the virtual conferences that you saw on the home page</h3>
+
+<dl>
+  <dt><h2>Education</h2></dt>
+  <dd><h4><%= @user.user_interest.school %></h4></dd>
+  <dt><h2>Company</h2></dt>
+  <dd><h4><%= @user.user_interest.company %></h4></dd>
+  <dt><h2>Work Experience</h2></dt>
+  <dd><h4><%= @user.user_interest.work_experience %></h4></dd>
+  <dt><h2>Looking For Work?</h2></dt>
+  <dd><h4><%= @user.user_interest.company %></h4></dd>
+  <dt><h2>Code Skills</h2></dt>
+  <dd><h4><%= @user.user_interest.code_skills %></h4></dd>
+</dl>
 
 
 </body>
