@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   post '/session', to: 'sessions#create', as: 'session'
 
-  delete '/session/', to: 'sessions#destroy'
+  delete '/session/', to: 'sessionscur#destroy'
 
   post '/donations', to: 'donations#create'
 
