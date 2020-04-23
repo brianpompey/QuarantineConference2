@@ -5,9 +5,7 @@ class WorkshopsController < ApplicationController
     end
 
     def create
-    #    byebug
-        @conference = Conference.find(params[:id])
-        @conference.workshop.create = Workshop.new(workshop_params)
+        @conference.workshop.create(workshop_params)
         redirect_to root_path
     end
 

@@ -20,6 +20,10 @@
         <%= f.text_area :description, class: "form-control" %>
         </div>
 
+        <div>
+        <%= f.hidden_field :conference_id,  "#{@conference.id}" %>
+        </div>
+
         <div class="actions">
         <%= f.submit class:"btn btn-primary" %>
         </div>
