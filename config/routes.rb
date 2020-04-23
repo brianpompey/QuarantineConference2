@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   post '/donations', to: 'donations#create'
 
   #only admin can do these.. Admin must enter a specific password 
+  #admin can edit conferences, user can only select and register (only if logged in)
   get '/users', to: 'users#index'
 
   get '/conferences/new', to: 'conferences#new'
