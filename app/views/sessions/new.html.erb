@@ -1,19 +1,37 @@
-<%= form_with model: @session do |f| %>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+</head>
+
+<body>
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+
+<br>
+<%= form_tag session_path do |f| %>
 
     <div class="form-group">
-    <%= f.label :email, "Email:" %>
+    <%= label_tag :email, "Email:" %>
     <br>
-    <%= f.text_field :email, class: "form-control" %>
+    <%= text_field_tag :email, params[:email], class: "form-control" %>
     </div>
 
     <div class="form-group">
-    <%= f.label :password, "Password:" %>
+    <%= label_tag :password, "Password:" %>
     <br>
-    <%= f.password_field :password, class: "form-control" %>
+    <%= password_field_tag :password %>
     </div>
 
     <div class="actions">
-    <%= f.submit class:"btn btn-primary" %>
+    <%= submit_tag "Log In", class:"btn btn-primary" %>
     </div>
 
 <% end %>
+
+</body>
+</html>
