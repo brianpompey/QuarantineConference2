@@ -38,10 +38,15 @@ li a:hover {
 </style>
 </head>
 <body>
+<% if current_user %>
+    Logged in as <%= current_user.name %>
+    <a href="/logout">LogOut</a>
+<% else %>
 <ul>
-  <li><%= link_to "LogIn", login_path %></li>
-  <li><%= link_to "SignUp", signup_path %></li>
+    <li><%= link_to "LogIn", login_path %></li>
+    <li><%= link_to "SignUp", signup_path %></li>
 </ul>
+<% end %>
 
 <h1 align="center">Remote Conferences</h1>
 
