@@ -1,18 +1,17 @@
 class DonationsController < ApplicationController
 
-    def new
-        @conference = Conference.find(params[:id])
-    end
 
     def create
-        current_user.donations.create(donation_params)
-
+        @conference = Conference.find(params[:id])
+        current_user.donations.create(params[:user_id => current_user.user_id, :conference_id => @conference.id, :amount => @conference.min_donation])
+        flash.now[:alert] = "You're registered! See you there!"
+        redirect_to root_path
     end
 
 
-    private
+#    private
 
-    def donation_params
-        params.require(:donation).permit(:user_id, :conference_id, :amount)
-    end
+#    def donation_params
+#        params.require(:donation).permit(:user_id, :conference_id, :amount)
+#    end
 end
