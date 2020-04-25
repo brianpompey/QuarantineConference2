@@ -12,14 +12,7 @@ class ConferencesController < ApplicationController
 
 
     #only admins can add/edit conferences
-    def new
-        @conference = Conference.new
-    end
-
-    def create
-        @conference = Conference.create(conference_params)
-        redirect_to "/conferences/#{@conference.id}/workshops/new"
-    end
+    
 
 
 

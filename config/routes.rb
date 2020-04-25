@@ -31,11 +31,12 @@ Rails.application.routes.draw do
 
   #only admin can do these.. Admin must enter a specific password 
   #admin can edit conferences, user can only select and register (only if logged in)
-  get '/users', to: 'users#index'
+  scope '/admin', module: 'admin' do
+    resources :users, only: [:index]
+    resources :conferences, only: [:new, :create]
+  end
 
-  get '/conferences/new', to: 'conferences#new'
 
-  post '/conferences', to: 'conferences#create'
 
   get '/conferences/:id/workshops/new', to: 'workshops#new'
 
