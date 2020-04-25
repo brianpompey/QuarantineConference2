@@ -1,6 +1,11 @@
 class DonationsController < ApplicationController
+
+    def new
+        @conference = Conference.find(params[:id])
+    end
+
     def create
-        donation = Donation.create(donation_params)
+        current_user.donations.create(donation_params)
 
     end
 

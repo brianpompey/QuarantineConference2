@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   get '/users/:id', to: 'users#show'
 
+  get '/conferences/:id', to: 'conferences#show'
+
+  post '/donations', to: 'donations#create'
 #  match '/auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post] 
 
   

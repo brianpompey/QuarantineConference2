@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+</head>
+<body>
+
+<h3>Specific information for the <%=@conference.name%> conference</h3>
+
+    <dl>
+        <dt><h2>Date</h2></dt>
+        <dd><h4><%= @conference.date %></h4></dd>
+        <dt><h2>Time</h2></dt>
+        <dd><h4><%= @conference.time %></h4></dd>
+        <dt><h2>Minimum Donation</h2></dt>
+        <dd><h4><%= @conference.min_donation %></h4></dd>
+        <dt><h2>Keynote Speaker</h2></dt>
+        <dd><h4><%= @conference.keynote %></h4></dd>
+        <dt><h2>Category</h2></dt>
+        <dd><h4><%= @conference.category %></h4></dd>
+        <dt><h2>Workshops</h2></dt>
+        <dd><h4><%= @conference.workshops.name %></h4></dd>
+    </dl>
+
+     <button type="button" class="btn btn-default"><a href="/donations/new">Donation</a></button>
+    
+
+
+
+
+</body>
+</html>

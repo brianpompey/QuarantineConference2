@@ -1,9 +1,13 @@
 class ConferencesController < ApplicationController
-    before_action :require_login
-    skip_before_action :require_login, only: [:index]
+#    before_action :require_login
+#    skip_before_action :require_login, only: [:index]
 
     def index
         @conferences = Conference.all
+    end
+
+    def show
+        @conference = Conference.find(params[:id])
     end
 
 
