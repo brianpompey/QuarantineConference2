@@ -22,8 +22,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-#omniauth github
-gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+#omniauth google
+gem 'omniauth'
+
+gem 'omniauth-google-oauth2'
 
 #bootstrap for css styling
 gem 'bootstrap', '~> 4.4.1'
