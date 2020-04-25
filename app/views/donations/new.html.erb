@@ -8,20 +8,17 @@
 
 <%= form_for model: Donation.new do |f| %>
 
-    <div class="form-group">
-    <%= f.label :user_id, "Your Name:" %>
-    <br>
-    <%= f.text_field :name, value: "#{donation.user}" class: "form-control" %>
+    <div>
+    <%= f.hidden_field :conference_id, :value => "#{@conference.id}" %>
+    </div>
+
+    <div>
+    <%= f.hidden_field :user.id, :value => current_user.id %>
     </div>
 
     <div class="form-group">
-    <%= f.label :email, "Email:"  %>
-    <%= f.text_field :email, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-    <%= f.label :password, "Password:" %>
-    <%= f.password_field :password, class: "form-control" %>
+    <%= f.label :amount, "Amount:" %>
+    <%= f.number_field :amount, :value => "#{@conference.id}" %>
     </div>
 
 
