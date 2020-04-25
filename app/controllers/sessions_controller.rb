@@ -12,26 +12,26 @@ class SessionsController < ApplicationController
         
     #    else
 
-            @user = User.find_by_email(params[:email])
-            if @user && @user.authenticate(params[:password])
-                session[:user_id] = @user.id
-                redirect_to root_path
-            else
-                flash.now[:alert] = "Email or password is invalid"
-                render "new"
-            end
+        @user = User.find_by_email(params[:email])
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
+            redirect_to root_path
+        else
+            flash.now[:alert] = "Email or password is invalid"
+            render "new"
+        end
      #   end
     end
 
-    def omniauth
-        pp request.env['omniauth.auth']
+#    def omniauth
+#        pp request.env['omniauth.auth']
+#
+#        session[:name] = request.env['omniauth.auth']['info']['name']
+#        session[:omniauth_data] = request.env['omniauth.auth']
 
-        session[:name] = request.env['omniauth.auth']['info']['name']
-        session[:omniauth_data] = request.env['omniauth.auth']
-
-        redirect_to root_path
+#        redirect_to root_path
     
-    end
+#    end
 
 
     def destroy
