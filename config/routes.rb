@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'users#new'
 
-  post '/users', to: 'users#create'
+  post '/users', to: 'users#xcreate'
 
   get '/users/:id/user_interests/new', to: 'user_interests#new'
 
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   post '/donations', to: 'donations#create'
 #  match '/auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post] 
+
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
   
 
