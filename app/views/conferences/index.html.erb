@@ -72,7 +72,7 @@ li a:hover {
         <% @conferences.each do |conf| %>
 
             <tr>
-                <td><%= link_to "#{conf.name}", conferences_path(conf) %></td>
+                <td><a href="/conferences/<%= conf.id %>"><%= conf.name %></a></td>
                 <td><%= conf.date %></td>
                 <td><%= conf.time %></td>
                 <td><%= conf.min_donation %></td>

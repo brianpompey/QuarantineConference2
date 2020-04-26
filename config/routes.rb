@@ -33,14 +33,11 @@ Rails.application.routes.draw do
   #admin can edit conferences, user can only select and register (only if logged in)
   scope '/admin', module: 'admin' do
     resources :users, only: [:index]
-    resources :conferences, only: [:new, :create]
+    resources :conferences, only: [:new, :create, :admin_index]
+    get '/conferences/:id/workshops/new', to: 'workshops#new'
+    post '/workshops', to: 'workshops#create'
   end
 
-
-
-  get '/conferences/:id/workshops/new', to: 'workshops#new'
-
-  post '/workshops', to: 'workshops#create'
 
   #add interest route that comes from user id
   #get '/add_interest', to:

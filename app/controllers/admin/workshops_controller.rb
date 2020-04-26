@@ -1,4 +1,4 @@
-class WorkshopsController < ApplicationController
+class Admin::WorkshopsController < ApplicationController
     #only admins can add/edit conference workshops
     def new
         @conference = Conference.find(params[:id])

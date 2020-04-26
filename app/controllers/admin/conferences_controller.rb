@@ -7,7 +7,11 @@ class Admin::ConferencesController < ApplicationController
 
     def create
         @conference = Conference.create(conference_params)
-        redirect_to "/conferences/#{@conference.id}/workshops/new"
+        redirect_to "/admin/conferences/#{@conference.id}/workshops/new"
+    end
+
+    def admin_index
+        @conferences = Conference.all
     end
 
     private
