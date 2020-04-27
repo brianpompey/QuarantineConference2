@@ -15,13 +15,13 @@
         <div class="form-group">
         <%= f.label :date, "Date:" %>
         <br>
-        <%= f.date_select :date, class: "form-control" %>
+        <%= f.date_field :date, class: "form-control" %>
         </div>
 
         <div class="form-group">
         <%= f.label :time, "Time:" %>
         <br>
-        <%= f.time_select :time, class: "form-control" %>
+        <%= f.time_field :time, class: "form-control" %>
         </div>
 
         <div class="form-group">
@@ -40,7 +40,19 @@
         <%= f.label :category, "Category:" %>
         <br>
         <%= f.text_field :category, class: "form-control" %>
-        </div>
+        </div><br>
+
+        Workshops:
+        <div class="form-group">
+        <%= fields_for :workshops do |workshops_form| %>
+            <%= workshops_form.label :name %>
+            <%= workshops_form.text_field :name %><br><br>
+ 
+            <%= workshops_form.label :description %>
+            <%= workshops_form.text_area :description %>
+
+        <% end %>
+       </div><br>
 
         <div class="actions">
         <%= f.submit class:"btn btn-primary" %>

@@ -5,7 +5,6 @@ class Admin::WorkshopsController < ApplicationController
     end
 
     def create
-    #    byebug
         @conference = Conference.find(params[:workshop][:conference_id])
         @conference.workshops.build(workshop_params)
         if @conference.save

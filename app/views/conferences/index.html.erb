@@ -73,8 +73,8 @@ li a:hover {
 
             <tr>
                 <td><a href="/conferences/<%= conf.id %>"><%= conf.name %></a></td>
-                <td><%= conf.date.strftime("%b %d") %></td>
-                <td><%= conf.time.strftime("%H %M") %></td>
+                <td><%= conf.date %></td>
+                <td><%= conf.time %></td>
                 <td>$ <%= conf.min_donation %></td>
                 <td><%= conf.keynote %></td>
                 <td><%= conf.category %></td>
@@ -82,7 +82,7 @@ li a:hover {
             </tr>
 
         <% end %>
-
+      
 
     </tbody>
 </table>
