@@ -4,9 +4,11 @@
 </head>
 <body>
 
+
 <h2>Time to add some workshops for the <%= @conference.name %> Conference</h2>
 
     <%= form_with model: Workshop.new do |f| %>
+
 
         <div class="form-group">
         <%= f.label :name, "Name:" %>

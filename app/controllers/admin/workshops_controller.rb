@@ -7,8 +7,12 @@ class Admin::WorkshopsController < ApplicationController
     def create
     #    byebug
         @conference = Conference.find(params[:workshop][:conference_id])
-        @conference.workshops.create(workshop_params)
-        redirect_to root_path
+        @conference.workshops.build(workshop_params)
+        if @conference.save
+            redirect_to root_path
+        else
+            render :new
+        end
     end
 
 
