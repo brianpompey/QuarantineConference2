@@ -19,6 +19,11 @@ Rails.application.routes.draw do
 
 
   post '/user_interests', to: 'user_interests#create'
+
+  get '/users/:id/user_interests/edit', to: 'user_interests#edit'
+
+  patch '/user_interests', to: 'user_interests#update'
+
   #after new user submits user_interest form, the header nav bar will show up that gives them options
 
   get '/login', to: 'sessions#new', as: 'login'
