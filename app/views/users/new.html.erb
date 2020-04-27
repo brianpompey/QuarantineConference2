@@ -15,6 +15,22 @@ body {background-color: #f0f0f0;}
 <h1 align="center">Sign Up Here</h1>
 <img src="http://www.caribbean360.com/wp-content/uploads/2020/02/coronavirus-quarantine.jpg" alt="quarantine pic" height="300" width="600">
 
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      Please try again! <%= pluralize(@user.errors.count, "error") %>
+      prohibited this post from being saved:
+    </h2>
+ 
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <%= form_for @user do |f| %>
 
     <div class="form-group">
