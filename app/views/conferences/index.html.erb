@@ -78,7 +78,7 @@ li a:hover {
                 <td>$ <%= conf.min_donation %></td>
                 <td><%= conf.keynote %></td>
                 <td><%= conf.category %></td>
-                <td><%= conf.workshops.name %></td>
+                <td><%= conf.workshops_attributes.first.name %></td>
             </tr>
 
         <% end %>

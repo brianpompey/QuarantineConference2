@@ -43,13 +43,15 @@
         </div><br>
 
         Workshops:
+        <br><br>
         <div class="form-group">
-        <%= fields_for :workshops do |workshops_form| %>
-            <%= workshops_form.label :name %>
-            <%= workshops_form.text_field :name %><br><br>
+        <%= f.fields_for :workshops do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name %><br><br>
  
-            <%= workshops_form.label :description %>
-            <%= workshops_form.text_area :description %>
+            <%= f.label :description %>
+            <%= f.text_area :description %>
+            <br><br>
 
         <% end %>
        </div><br>

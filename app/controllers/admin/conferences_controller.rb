@@ -3,6 +3,7 @@ class Admin::ConferencesController < ApplicationController
 
     def new
         @conference = Conference.new
+        3.times { @conference.workshops.build }
     end
 
     def create
