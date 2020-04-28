@@ -48,7 +48,7 @@ li a:hover {
 </ul>
 <% end %>
 
-<h1 align="center">Remote Conferences</h1>
+<h1 align="center">Remote Conferences 2020</h1>
 
 <table style="width:100%">
     <thead>
@@ -66,19 +66,21 @@ li a:hover {
         <td><strong>Minimum Donation</strong></td>
         <td><strong>Keynote</strong></td>
         <td><strong>Category</strong></td>
-        <td><strong>Some Workshops</strong></td>
+        <td><strong>Workshop Example</strong></td>
         </tr>
 
         <% @conferences.each do |conf| %>
 
             <tr>
                 <td><a href="/conferences/<%= conf.id %>"><%= conf.name %></a></td>
-                <td><%= conf.date %></td>
-                <td><%= conf.time %></td>
+                <td><%= conf.date.strftime("%b %d") %></td>
+                <td><%= conf.time.strftime("%I:%M%p") %></td>
                 <td>$ <%= conf.min_donation %></td>
                 <td><%= conf.keynote %></td>
                 <td><%= conf.category %></td>
-                <td><%= conf.workshops_attributes.first.name %></td>
+                <% conf.workshops.limit(1).each do |workshop| %>
+                <td> <%= workshop.name %> - <%= workshop.description %></td>
+                <% end %>
             </tr>
 
         <% end %>
