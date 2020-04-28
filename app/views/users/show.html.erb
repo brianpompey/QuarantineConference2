@@ -53,7 +53,7 @@ li a:hover {
         <dt><h2>Work Experience</h2></dt>
         <dd><h4><%= @user.user_interest.work_experience %> years</h4></dd>
         <dt><h2>Looking For Work?</h2></dt>
-        <dd><h4><%= @user.user_interest.looking_for_work? %></h4></dd>
+        <dd><h4><%= @user.user_interest.looking_for_work?.humanize %></h4></dd>
         <dt><h2>Code Skills</h2></dt>
         <dd><h4><%= @user.user_interest.code_skills %></h4></dd>
     </dl>

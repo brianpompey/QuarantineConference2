@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   post '/sessions', to: 'sessions#create', as: 'session'
 
-  delete '/session/', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
   post '/donations', to: 'donations#create'
 
