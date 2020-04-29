@@ -1,4 +1,5 @@
 class Admin::ConferencesController < ApplicationController
+    before_action :require_login
 
 
     def new
@@ -9,7 +10,6 @@ class Admin::ConferencesController < ApplicationController
     def create
         @conference = Conference.create(conference_params)
         redirect_to root_path
-    #    redirect_to "/admin/conferences/#{@conference.id}/workshops/new"
     end
 
     def admin_index

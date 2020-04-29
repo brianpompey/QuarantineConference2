@@ -10,7 +10,7 @@ class ConferencesController < ApplicationController
 
     def search_index
         #search form on regular index page that redirects to this one
-        with the results of the search params
+        #with the results of the search params
         @conferences = Conference.search(params[:search])
     end
 
