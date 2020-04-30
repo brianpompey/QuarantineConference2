@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
   get '/conferences/:id', to: 'conferences#show'
 
-  post '/donations', to: 'donations#create'
+  resources :conferences do
+    resources :donations, only: [:new]
+  end
+#  post '/donations', to: 'donations#create'
 #  match '/auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post] 
 
   resources :users do

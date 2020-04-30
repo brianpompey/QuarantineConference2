@@ -40,7 +40,9 @@ li a:hover {
     <li><%= link_to "SignUp", signup_path %></li>
 </ul>
 <% end %>
-
+<ul>
+    <li><%= link_to "Attend Conference", new_conference_donation_path(@conference) %></li>
+</ul>
 <h3>Specific information for the <%=@conference.name%> conference</h3>
 
     <dl>
