@@ -6,7 +6,7 @@
 <h1>Hey <%= @user.name %>!</h1>
 <h3>Why don't you give us a little more information about yourself</h3>
 
-    <%= form_for @user.user_interest do |f| %>
+    <%= form_with model: UserInterest.new do |f| %>
 
         <div class="form-group">
         <%= f.label :company, "Company:" %>

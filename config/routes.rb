@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
 #  post '/user_interests', to: 'user_interests#create'
 
-  get '/users/:id/user_interests/edit', to: 'user_interests#edit'
+  get '/users/:user_id/user_interests/:id/edit', to: 'user_interests#edit'
 
 #  patch '/user_interests/:id', to: 'user_interests#update'
 
