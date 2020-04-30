@@ -9,12 +9,12 @@ class UserInterestsController < ApplicationController
     end
 
     def edit 
-        @user = User.find(params[:id])
+        @user = current_user
     end
 
     def update
-        @user = User.find(params[:id])
-        @user.update(user_interest_params)
+        current_user.build_user_interest(user_interest_params)
+        @user.save
         redirect_to user_path(@user)
 
     end

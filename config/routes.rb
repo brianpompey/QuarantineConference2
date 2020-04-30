@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   post '/users', to: 'users#create'
 
-  get '/users/:id/user_interests/new', to: 'user_interests#new'
 
   get '/users/:id', to: 'users#show'
 
@@ -16,13 +15,19 @@ Rails.application.routes.draw do
   post '/donations', to: 'donations#create'
 #  match '/auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post] 
 
+  resources :users do
+    resources :user_interests, only: [:new, :edit]
+  end
 
+  resources :user_interests
 
-  post '/user_interests', to: 'user_interests#create'
+#  get '/users/:id/user_interests/new', to: 'user_interests#new'
+
+#  post '/user_interests', to: 'user_interests#create'
 
   get '/users/:id/user_interests/edit', to: 'user_interests#edit'
 
-  patch '/user_interests', to: 'user_interests#update'
+#  patch '/user_interests/:id', to: 'user_interests#update'
 
   #after new user submits user_interest form, the header nav bar will show up that gives them options
 
