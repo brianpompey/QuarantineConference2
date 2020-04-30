@@ -5,20 +5,20 @@
 </style>
 </head>
 <body>
-
-<%= form_for model: Donation.new do |f| %>
+<h2>Register for <%= "#{@conference.name}"%> conference</h2>
+<%= form_with model: Donation.new do |f| %>
 
     <div>
     <%= f.hidden_field :conference_id, :value => "#{@conference.id}" %>
     </div>
 
     <div>
-    <%= f.hidden_field :user.id, :value => current_user.id %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
     </div>
 
     <div class="form-group">
     <%= f.label :amount, "Amount:" %>
-    <%= f.number_field :amount, :value => "#{@conference.id}" %>
+    <%= f.number_field :amount, :value => "#{@conference.min_donation}" %>
     </div>
 
 

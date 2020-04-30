@@ -6,17 +6,23 @@ class DonationsController < ApplicationController
     end
 
     def create
-        @conference = Conference.find(params[:id])
-        current_user.donations.create(params[:user_id => current_user.user_id, :conference_id => @conference.id, :amount => @conference.min_donation])
-        current_user.conferences << @conference
-        flash.now[:alert] = "You're registered! See you there!"
-        redirect_to conference_path(@conference)
+    #    byebug
+        @conference = Donation.find(params[:conference_id])
+        @donation = Donation.new(params[donation_params])
+    #    current_user.conferences << @conference
+        if @donation.save
+            flash.now[:alert] = "You're registered! See you there!"
+            redirect_to conference_path(@conference)
+        else
+            flash.now[:alert] = "Sorry, Your donation was less than the required amount!"
+            render 'new'
+        end
     end
 
 
-#    private
+    private
 
-#    def donation_params
-#        params.require(:donation).permit(:user_id, :conference_id, :amount)
-#    end
+    def donation_params
+        params.require(:donation).permit(:user_id, :conference_id, :amount)
+    end
 end
