@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to "/users/#{@user.id}/user_interests/new"
+            redirect_to new_user_user_interest_path(@user)
         else
             render :new
         end

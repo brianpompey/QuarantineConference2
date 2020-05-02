@@ -7,15 +7,18 @@ class UserInterestsController < ApplicationController
 
     def create
         current_user.create_user_interest(user_interest_params)
-        redirect_to "/users/#{current_user.id}"
+        redirect_to user_path(current_user)
     end
 
     def edit 
+    #    byebug
         @user = current_user
-        @user_interest = UserInterest.find(params[:id])
+        #something wrong here
+        @user_interest = current_user.user_interest
     end
 
     def update
+    #    byebug
         if current_user.user_interest.update(user_interest_params)
             redirect_to user_path(current_user)
         else
@@ -26,6 +29,6 @@ class UserInterestsController < ApplicationController
     private
 
     def user_interest_params
-        params.require(:user_interest).permit(:school, :company, :work_experience, :looking_for_work, :code_skills, :user_id)
+        params.permit(:school, :company, :work_experience, :looking_for_work, :code_skills, :user_id)
     end
 end

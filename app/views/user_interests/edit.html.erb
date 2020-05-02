@@ -12,7 +12,7 @@
 
 <h1>Edit <%= @user.name %>'s information</h1>
 
-    <%= form_with model: @user_interest do |f| %>
+    <%= form_with url: user_user_interest_path, model: @user_interest do |f| %>
 
         <div class="form-group">
         <%= f.label :company, "Company:" %>

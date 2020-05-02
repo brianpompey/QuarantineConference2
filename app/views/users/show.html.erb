@@ -7,7 +7,7 @@
 <body>
     <ul>
         <li><%= link_to "View Conferences", root_path %></li>
-        <li><%= link_to "Edit Interests", "/users/#{@user.id}/user_interests/#{@user.user_interest.id}/edit"%></li>
+        <li><%= link_to "Edit Interests", edit_user_user_interest_path(current_user) %></li>
         <li><%= link_to "LogOut", logout_path %></li>
     </ul>
 

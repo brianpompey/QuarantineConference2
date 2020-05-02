@@ -18,15 +18,16 @@ Rails.application.routes.draw do
 #  post '/donations', to: 'donations#create'
 
 
-  resources :users do
-    resources :user_interests, only: [:new, :edit]
+  resources :users, only: [:new, :create, :show] do
+    resources :user_interests, only: [:new, :create, :edit, :update]
   end
 
-  resources :user_interests
+
+#  resources :user_interests
 
 
 
-  get '/users/:user_id/user_interests/:id/edit', to: 'user_interests#edit'
+#  get '/users/:user_id/user_interests/:id/edit', to: 'user_interests#edit'
 
 
   #after new user submits user_interest form, the header nav bar will show up that gives them options
