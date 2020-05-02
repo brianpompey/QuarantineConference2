@@ -1,5 +1,6 @@
 class DonationsController < ApplicationController
-
+    before_action :require_login
+    
     def new
         @conference = Conference.find(params[:conference_id])
         @user = current_user

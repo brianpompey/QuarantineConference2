@@ -1,4 +1,6 @@
 class Admin::WorkshopsController < ApplicationController
+    before_action :require_login
+    
     #only admins can add/edit conference workshops
     def new
         @conference = Conference.find(params[:id])
