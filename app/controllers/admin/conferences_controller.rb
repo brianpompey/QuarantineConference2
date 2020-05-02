@@ -3,8 +3,12 @@ class Admin::ConferencesController < ApplicationController
 
 
     def new
-        @conference = Conference.new
-        3.times { @conference.workshops.build }
+        if current_user.admin?
+            @conference = Conference.new
+            3.times { @conference.workshops.build }
+        else
+            redirect_to root_path, alert: "Error! Admin privilege only"
+        end
     end
 
     def create
