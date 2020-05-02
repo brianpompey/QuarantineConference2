@@ -4,6 +4,7 @@ class ConferencesController < ApplicationController
     def index
         @conferences = Conference.all
     end
+   
 
     def search_index
         #search form on regular index page that redirects to this one

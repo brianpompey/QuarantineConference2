@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get '/conferences/:id', to: 'conferences#show'
 
-  resources :conferences do
+  resources :conferences, only: [:show] do
     resources :donations, only: [:new]
   end
 #  post '/donations', to: 'donations#create'

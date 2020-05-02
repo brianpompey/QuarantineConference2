@@ -12,12 +12,24 @@ class Admin::ConferencesController < ApplicationController
     end
 
     def create
-        @conference = Conference.create(conference_params)
-        redirect_to root_path
+        if current_user.admin
+            @conference = Conference.new(conference_params)
+            if @conference.save
+                redirect_to root_path
+            else
+                render 'new'
+            end
+        else
+            redirect_to root_path, alert: "Error! Admin privilege only"
+        end
     end
 
     def admin_index
-        @conferences = Conference.all
+        if current_user.admin?
+            @conferences = Conference.all
+        else
+            redirect_to root_path, alert: "Error! Admin privilege only"
+        end
     end
 
     private
