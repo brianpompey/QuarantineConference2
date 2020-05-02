@@ -3,6 +3,13 @@
 <head>
 </head>
 <body>
+
+    <ul>
+        <li><%= link_to "View Conferences", root_path %></li>
+        <li><%= link_to "LogOut", logout_path %></li>
+    </ul>
+
+
 <h1>Edit <%= @user.name %>'s information</h1>
 
     <%= form_with model: @user_interest do |f| %>

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :donations, only: [:new]
   end
 #  post '/donations', to: 'donations#create'
-#  match '/auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post] 
+
 
   resources :users do
     resources :user_interests, only: [:new, :edit]
@@ -24,13 +24,10 @@ Rails.application.routes.draw do
 
   resources :user_interests
 
-#  get '/users/:id/user_interests/new', to: 'user_interests#new'
 
-#  post '/user_interests', to: 'user_interests#create'
 
   get '/users/:user_id/user_interests/:id/edit', to: 'user_interests#edit'
 
-#  patch '/user_interests/:id', to: 'user_interests#update'
 
   #after new user submits user_interest form, the header nav bar will show up that gives them options
 
@@ -50,19 +47,6 @@ Rails.application.routes.draw do
     get '/conferences/:id/workshops/new', to: 'workshops#new'
     post '/workshops', to: 'workshops#create'
   end
-
-
-  #add interest route that comes from user id
-  #get '/add_interest', to:
-
-#  resources :users do
-#    resources :user_interests
-#  end
-
-#  resources :conferences do
-#    resources :workshops
-#  end
-
  
 
 end

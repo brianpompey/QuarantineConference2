@@ -2,38 +2,14 @@
 <html>
 <head>
 <style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
 </style>
 </head>
 <body>
 <% if current_user %>
-    Logged in as <%= current_user.name %>
-    <a href="/logout">LogOut</a>
+    <ul>
+        <li><%= link_to "My Page", user_path(current_user) %></li>
+        <li><%= link_to "LogOut", logout_path %></li>
+    </ul>
 <% else %>
 <ul>
     <li><%= link_to "LogIn", login_path %></li>
