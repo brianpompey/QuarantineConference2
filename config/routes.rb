@@ -43,7 +43,8 @@ Rails.application.routes.draw do
   #admin can edit conferences, user can only select and register (only if logged in)
   scope '/admin', module: 'admin' do
     resources :users, only: [:index]
-    resources :conferences, only: [:new, :create, :admin_index]
+    resources :conferences, only: [:new, :create]
+    get '/conferences/admin_index.html.erb', to: 'conferences#admin_index', as: 'super_index'
     get '/conferences/:id/workshops/new', to: 'workshops#new'
     post '/workshops', to: 'workshops#create'
   end

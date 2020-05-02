@@ -49,3 +49,7 @@ Workshop.create(:name => "Timothy J. Fontaine", :description => "Leading Node", 
 Workshop.create(:name => "Trygve Reenskaug", :description => "Sinatra MVC Structure", :conference_id => 9)
 
 Workshop.create(:name => "Andrew Clark", :description => "All the Angles of Angular", :conference_id => 10)
+
+User.delete_all
+
+User.create(:email => "admin@admin.com", :password => "administrator", :name => "Admin", :admin => true)
