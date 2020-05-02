@@ -1,35 +1,24 @@
 class Admin::ConferencesController < ApplicationController
     before_action :require_login
+    before_action :check_admin
 
 
     def new
-        if current_user.admin?
-            @conference = Conference.new
-            3.times { @conference.workshops.build }
-        else
-            redirect_to root_path, alert: "Error! Admin privilege only"
-        end
+        @conference = Conference.new
+        3.times { @conference.workshops.build }
     end
 
     def create
-        if current_user.admin
-            @conference = Conference.new(conference_params)
-            if @conference.save
-                redirect_to root_path
-            else
-                render 'new'
-            end
+        @conference = Conference.new(conference_params)
+        if @conference.save
+            redirect_to root_path
         else
-            redirect_to root_path, alert: "Error! Admin privilege only"
+            render 'new'
         end
     end
 
     def admin_index
-        if current_user.admin?
-            @conferences = Conference.all
-        else
-            redirect_to root_path, alert: "Error! Admin privilege only"
-        end
+        @conferences = Conference.all
     end
 
     private

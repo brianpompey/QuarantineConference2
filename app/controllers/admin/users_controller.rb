@@ -1,12 +1,9 @@
 class Admin::UsersController < ApplicationController
     before_action :require_login
+    before_action :check_admin
 
     def index
-        if current_user.admin?
-            @users = User.all
-        else
-            redirect_to root_path, alert: "Error! Admin privilege only"
-        end
+        @users = User.all
     end
 
 
