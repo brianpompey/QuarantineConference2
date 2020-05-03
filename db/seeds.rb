@@ -50,6 +50,26 @@ Workshop.create(:name => "Trygve Reenskaug", :description => "Sinatra MVC Struct
 
 Workshop.create(:name => "Andrew Clark", :description => "All the Angles of Angular", :conference_id => 10)
 
+Workshop.create(:name => "Sandi Metz", :description => "Practical Object-oriented Design", :conference_id => 1)
+
+Workshop.create(:name => "Michael Hartl", :description => "Learn Web Development with Ruby", :conference_id => 2)
+
+Workshop.create(:name => "Eric Matthes", :description => "Python Crash Course", :conference_id => 3)
+
+Workshop.create(:name => "Marijn Haverbeke", :description => "Eloquent Javascript", :conference_id => 4)
+
+Workshop.create(:name => "Azat Mardan", :description => "React Quickly", :conference_id => 5)
+
+Workshop.create(:name => "Al Sweigart", :description => "Automate the boring stuff", :conference_id => 6)
+
+Workshop.create(:name => "Linda Liukas", :description => "Hello Ruby", :conference_id => 7)
+
+Workshop.create(:name => "Mario Casciaro", :description => "Node.js Design Patterns", :conference_id => 8)
+
+Workshop.create(:name => "Alan Harris", :description => "Sinatra Up and Running", :conference_id => 9)
+
+Workshop.create(:name => "Zac Gordon", :description => "React Explained", :conference_id => 10)
+
 User.delete_all
 
 User.create(:email => "admin@admin.com", :password => "administrator", :name => "Admin", :admin => true)

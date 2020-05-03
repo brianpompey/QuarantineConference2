@@ -15,6 +15,7 @@
     <li><%= link_to "LogIn", login_path %></li>
     <li><%= link_to "SignUp", signup_path %></li>
 </ul>
+
 <% end %>
 <ul>
     <li><%= link_to "Attend Conference", new_conference_donation_path(@conference) %></li>
@@ -40,7 +41,7 @@
 
     <% if current_user %>
         <button type="button" class="btn btn-default"><a href="/donations/new">Donation</a></button>
-    <% else %>%
+    <% else %>
         <h3>SignUp/In to Register!</h3>
     <% end %>
     
