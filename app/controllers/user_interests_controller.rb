@@ -29,6 +29,6 @@ class UserInterestsController < ApplicationController
     private
 
     def user_interest_params
-        params.permit(:school, :company, :work_experience, :looking_for_work, :code_skills, :user_id)
+        params.require(:user_interest).permit(:school, :company, :work_experience, :looking_for_work, :code_skills, :user_id)
     end
 end

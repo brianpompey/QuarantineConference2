@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Register for <%= "#{@conference.name}"%> conference</h2>
-<%= form_with model: Donation.new do |f| %>
+<%= form_with url: donations_path do |f| %>
 
     <div>
     <%= f.hidden_field :conference_id, :value => "#{@conference.id}" %>
