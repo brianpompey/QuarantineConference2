@@ -12,43 +12,9 @@
 <h1>Hey <%= @user.name %>!</h1>
 <h3>Why don't you give us a little more information about yourself</h3>
 
-    <%= form_with url: user_interest_path do |f| %>
+    <%= form_with model: UserInterest.new, url: user_interest_path do |f| %>
 
-        <div class="form-group">
-        <%= f.label :company, "Company:" %>
-        <br>
-        <%= f.text_field :company, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-        <%= f.label :school, "Education:" %>
-        <br>
-        <%= f.text_field :school, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-        <%= f.label :work_experience, "Experience:" %>
-        <br>
-        <%= f.text_field :work_experience, class: "form-control" %>years
-        </div>
-        <br>
-        <div class="form-group">
-        <%= f.label :looking_for_work, "Are you currently looking for work?(New and experienced devs)" %>
-        
-        <%= f.check_box :looking_for_work, class: "form-check-input" %>
-        <br><br>
-        </div>
-
-        <div class="form-group">
-        <%= f.label :code_skills, "Give us a little summary of your code skills (languages, frameworks, certs, etc.):" %>
-        <br>
-        <%= f.text_area :code_skills, class: "form-control" %>
-        </div>
-
-
-        <div class="actions">
-        <%= f.submit class:"btn btn-primary" %>
-        </div>
+        <%= render partial: "form", locals: { f: f } %>
 
     <% end %>
 

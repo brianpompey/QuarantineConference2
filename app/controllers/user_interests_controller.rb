@@ -6,7 +6,7 @@ class UserInterestsController < ApplicationController
     end
 
     def create
-        byebug
+     #   byebug
         current_user.create_user_interest(user_interest_params)
         redirect_to user_path(current_user)
     end
