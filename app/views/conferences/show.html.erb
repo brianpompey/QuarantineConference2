@@ -15,6 +15,12 @@
     <li><%= link_to "LogIn", login_path %></li>
     <li><%= link_to "SignUp", signup_path %></li>
 </ul>
+    <% flash.each do |type, msg| %>
+        <div class="notice">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <%= msg %>
+        </div>
+    <% end %>
 
 <% end %>
 <ul>
@@ -41,8 +47,6 @@
 
     <% if current_user %>
         <button type="button" class="btn btn-default"><a href="/donations/new">Donation</a></button>
-    <% else %>
-        <h3>SignUp/In to Register!</h3>
     <% end %>
     
 

@@ -14,6 +14,10 @@ class ConferencesController < ApplicationController
 
     def show
         @conference = Conference.find(params[:id])
+        if !current_user
+            flash[:notice] = "SignUp/In to Register!"
+        end
+
     end
 
 
