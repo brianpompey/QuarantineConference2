@@ -15,18 +15,12 @@ Rails.application.routes.draw do
   resources :conferences, only: [:show] do
     resources :donations, only: [:new]
   end
-#  post '/donations', to: 'donations#create'
-
-
+  
   resources :users, only: [:new, :create, :show] do
     resources :user_interests, only: [:new, :edit, :update]
   end
 
   post '/user_interest', to: 'user_interests#create'
-
-#  resources :user_interests
-
-
 
 
   #after new user submits user_interest form, the header nav bar will show up that gives them options
