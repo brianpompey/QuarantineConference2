@@ -7,10 +7,10 @@ class DonationsController < ApplicationController
     end
 
     def create
-        byebug
-        @conference = Donation.find(params[:conference_id])
+    #    byebug
+        @conference = Conference.find(params[:donation][:conference_id])
         @donation = Donation.new(params[donation_params])
-    #    current_user.conferences << @conference
+
         if @donation.save
             flash.now[:notice] = "You're registered! See you there!"
             redirect_to conference_path(@conference)
