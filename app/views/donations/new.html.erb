@@ -6,6 +6,13 @@
 </head>
 <body>
 <h2>Register for <%= "#{@conference.name}"%> conference</h2>
+
+    <% flash.each do |type, msg| %>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <%= msg %>
+        </div>
+    <% end %>
 <%= form_with url: donations_path, model: Donation.new do |f| %>
 
     <div>

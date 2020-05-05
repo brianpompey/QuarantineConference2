@@ -9,14 +9,13 @@ class DonationsController < ApplicationController
     def create
     #    byebug
         @conference = Conference.find(params[:donation][:conference_id])
-        @donation = Donation.new(params[donation_params])
-
+        @donation = Donation.new(donation_params)
+    #    byebug
         if @donation.save
-            flash.now[:notice] = "You're registered! See you there!"
+            flash[:notice] = "SignUp/In to Register!"
             redirect_to conference_path(@conference)
         else
-            flash.now[:alert] = "Sorry, Your donation was less than the required amount!"
-            render 'new'
+            render 'new', alert: "Sorry, Your donation was less than the required amount!"
         end
     end
 
