@@ -1,4 +1,3 @@
-#includes all conferences and which users are going. conference links to conference show pages
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +5,45 @@
 <body>
     <ul>
         <li><%= link_to "LogOut", logout_path %></li>
+        <li><%= link_to "Users", '/admin/users' %></li>
     </ul>
 
 <h1>Admin Index</h1>
+
+<table style="width:100%">
+    <thead>
+        <tr>
+            <th colspan="6"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Keynote</strong></td>
+        <td><strong>Category</strong></td>
+        <td><strong>Date</strong></td>
+        <td><strong>Time</strong></td>
+        <td><strong>Attendees</strong></td>
+        </tr>
+
+        <% @conferences.each do |conf| %>
+
+            <tr>
+                <td><%= conf.name %></td>
+                <td><%= conf.keynote %></td>
+                <td><%= conf.category %></td>
+                <td><%= conf.date.strftime("%b %d") %></td>
+                <td><%= conf.time.strftime("%I:%M%p") %></td>
+                <% conf.users.each do |user| %>
+                    <td><%= user.name %></td>
+                <% end %>
+            </tr>
+    
+        <% end %>
+
+    </tbody>
+</table>
 
 </body>
 </html>

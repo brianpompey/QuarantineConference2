@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :conferences, only: [:show] do
     resources :donations, only: [:new]
   end
-  
+
   resources :users, only: [:new, :create, :show] do
     resources :user_interests, only: [:new, :edit, :update]
   end

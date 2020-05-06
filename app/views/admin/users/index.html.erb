@@ -9,5 +9,45 @@
     </ul>
 
 
+<table style="width:100%">
+    <thead>
+        <tr>
+            <th colspan="7"></th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Company</strong></td>
+        <td><strong>School</strong></td>
+        <td><strong>Experience</strong></td>
+        <td><strong>Looking For Work?</strong></td>
+        <td><strong>Skills</strong></td>
+        <td><strong>Conferences Attending</strong></td>
+        </tr>
+
+        <% @users.each do |user| %>
+
+            <tr>
+                <td><%= user.name %></a></td>
+                <td><%= user.user_interest.company %></td>
+                <td><%= user.user_interest.school %></td>
+                <td><%= user.user_interest.work_experience %></td>
+                <td><%= user.user_interest.looking_for_work?.humanize %></td>
+                <td><%= user.user_interest.code_skills %></td>
+                <% user.conferences.each do |conf| %>
+                <td> <%= conf.name %> - <%= conf.date %></td>
+                <% end %>
+            </tr>
+
+        <% end %>
+      
+
+    </tbody>
+</table>
+
+
 </body>
 </html>
