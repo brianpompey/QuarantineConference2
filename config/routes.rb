@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   post '/users', to: 'users#create'
 
+  match '/auth/:provider/callback', to: 'users#omniauth', via: [:get, :post]
+
 
   get '/users/:id', to: 'users#show'
 

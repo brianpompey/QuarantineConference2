@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :require_login
-    skip_before_action :require_login, only: [:new, :create]
+    skip_before_action :require_login, only: [:new, :create, :hello]
     
     def new
         @user = User.new
@@ -14,6 +14,22 @@ class UsersController < ApplicationController
         else
             render :new
         end
+    end
+
+    def omniauth
+
+        pp request.env['omniauth.auth']
+    
+
+        session[:name] = request.env['omniauth.auth']['info']['name']
+        session[:omniauth_data] = request.env['omniauth.auth']
+    
+
+        redirect_to omni_path
+    end
+
+    def hello
+        
     end
 
     def show
