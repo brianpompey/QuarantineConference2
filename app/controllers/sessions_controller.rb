@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
                 @user = User.create(:email => oauth_email, :password => SecureRandom.hex, :name => request.env["omniauth.auth"]["info"]["name"])
                 session[:user_id] = @user.id
 
-                redirect_to 'conferences/index'
+                redirect_to new_user_user_interest_path(@user)
             end
         else
             @user = User.find_by_email(params[:email])

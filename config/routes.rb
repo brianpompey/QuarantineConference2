@@ -7,11 +7,6 @@ Rails.application.routes.draw do
 
   post '/users', to: 'users#create'
 
-  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-
-  get '/users/hello', to: 'users#hello'
-
-
   get '/users/:id', to: 'users#show'
 
   get '/conferences/:id', to: 'conferences#show'
@@ -32,6 +27,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new', as: 'login'
 
   post '/sessions', to: 'sessions#create', as: 'session'
+
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
   get '/logout', to: 'sessions#destroy'
 
