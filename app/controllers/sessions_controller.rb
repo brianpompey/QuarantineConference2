@@ -9,11 +9,16 @@ class SessionsController < ApplicationController
             oauth_email = request.env["omniauth.auth"]["info"]["email"]
             if @user = User.find_by(:email => oauth_email)
                 session[:user_id] = @user.id
+                redirect_to root_path
             else
-                @user = User.create(:email => oauth_email, :password => SecureRandom.hex, :name => request.env["omniauth.auth"]["info"]["name"])
-                session[:user_id] = @user.id
+                @user = User.new(:email => oauth_email, :password => SecureRandom.hex, :name => request.env["omniauth.auth"]["info"]["name"])
+                if @user.save
+                    session[:user_id] = @user.id
 
-                redirect_to new_user_user_interest_path(@user)
+                    redirect_to new_user_user_interest_path(@user)
+                else
+                    raise @user.errors.full_messages.inspect
+                end
             end
         else
             @user = User.find_by_email(params[:email])
