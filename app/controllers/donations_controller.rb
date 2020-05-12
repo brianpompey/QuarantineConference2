@@ -11,11 +11,11 @@ class DonationsController < ApplicationController
         @conference = Conference.find(params[:donation][:conference_id])
         @donation = Donation.new(donation_params)
     #    byebug
-        if @donation.save
-            flash[:notice] = "SignUp/In to Register!"
-            redirect_to conference_path(@conference)
-        else
+        if @donation.amount < @conference.min_donation
             render 'new', alert: "Sorry, Your donation was less than the required amount!"
+        else
+            @donation.save
+            redirect_to conference_path(@conference), notice: "You're Registered"
         end
     end
 
