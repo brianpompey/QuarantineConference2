@@ -9,7 +9,7 @@
         <li><%= link_to "LogOut", logout_path %></li>
     </ul>
 
-<h1>Hey <%= @user.name %>!</h1>
+<h1>Hey <%= @user.name.split.first %>!</h1>
 <h3>Why don't you give us a little more information about yourself</h3>
 
     <%= form_with model: UserInterest.new, url: user_interest_path do |f| %>
