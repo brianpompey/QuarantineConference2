@@ -16,6 +16,8 @@ class ConferencesController < ApplicationController
         @conference = Conference.find(params[:id])
         if !current_user
             flash[:notice] = "SignUp/In to Register!"
+        elsif @conference.current_user
+            flash[:notice] = "Your're Refistered!"
         end
 
     end

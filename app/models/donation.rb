@@ -3,7 +3,7 @@ class Donation < ApplicationRecord
     belongs_to :conference
 
     validates :amount, presence: true
-    validate :valid_donation
+   # validate :valid_donation
 
 
     private
