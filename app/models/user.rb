@@ -9,5 +9,7 @@ class User < ApplicationRecord
     validates :name, presence: true
     validates :password, presence: true
 
+    #scope method that only accepts users who aren't admins
+    #so on the admin users index page, admin wont be included as a user
     scope :non_admin, -> {where(admin: false)}
 end
