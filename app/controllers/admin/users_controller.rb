@@ -4,7 +4,8 @@ class Admin::UsersController < ApplicationController
 
     def index
     #    byebug
-        @users = User.all.slice(1..-1)
+    #    @users = User.all.slice(1..-1)
+        @users = User.all.non_admin
     end
 
 

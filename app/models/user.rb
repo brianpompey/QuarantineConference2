@@ -8,4 +8,6 @@ class User < ApplicationRecord
     validates :email, format: { with: /\A\S+@.+\.\S+\z/ }
     validates :name, presence: true
     validates :password, presence: true
+
+    scope :non_admin, -> {where(admin: false)}
 end
