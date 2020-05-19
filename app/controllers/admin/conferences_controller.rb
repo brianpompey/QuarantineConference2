@@ -11,7 +11,7 @@ class Admin::ConferencesController < ApplicationController
     def create
         @conference = Conference.new(conference_params)
         if @conference.save
-            redirect_to root_path
+            redirect_to super_index_path
         else
             render 'new'
         end
