@@ -3,7 +3,7 @@ class DonationsController < ApplicationController
     
     def new
         @conference = Conference.find(params[:conference_id])
-    #    @donation = Donation.new
+        @donation = Donation.new
         @user = current_user
     end
 
@@ -11,15 +11,15 @@ class DonationsController < ApplicationController
     #    byebug
         @conference = Conference.find(params[:donation][:conference_id])
         @donation = Donation.new(donation_params)
+        raise @donation.inspect
     #    byebug
-    
-    #    if @donation.amount < @conference.min_donation
-    #        render 'new', alert: "Sorry, Your donation was less than the required amount!"
-    #    else
-            @donation.save
+        
+        if @donation.save
             redirect_to conference_path(@conference)
-            #, notice: "You're Registered"
-    #    end
+        else
+            render 'new'
+        end
+  
     end
 
 

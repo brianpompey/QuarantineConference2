@@ -3,14 +3,7 @@ class Conference < ApplicationRecord
     has_many :users, through: :donations
     has_many :workshops
     accepts_nested_attributes_for :workshops, reject_if: lambda {|attributes| attributes['name'].blank?}
+    scope :searched, -> (category) {where("category LIKE ?", category)}
 
-
-    def self.search(search)
-        if search
-
-
-        else
-            @conferences = Conference.all
-        end
-    end
+    
 end

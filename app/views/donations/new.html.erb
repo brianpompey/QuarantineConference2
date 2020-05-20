@@ -7,6 +7,20 @@
 <body>
 <h2>Register for <%= "#{@conference.name}"%> conference</h2>
 
+<% if @donation.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      Please try again! <%= pluralize(@donation.errors.count, "error") %>
+      prohibited this post from being saved:
+    </h2>
+ 
+    <ul>
+    <% @donation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
 
 <%= form_with url: donations_path, model: Donation.new do |f| %>
