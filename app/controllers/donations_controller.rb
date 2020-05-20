@@ -5,18 +5,20 @@ class DonationsController < ApplicationController
         @conference = Conference.find(params[:conference_id])
         @donation = Donation.new
         @user = current_user
+        @errors = []
     end
 
     def create
     #    byebug
         @conference = Conference.find(params[:donation][:conference_id])
         @donation = Donation.new(donation_params)
-        raise @donation.inspect
+    #    raise @donation.inspect
     #    byebug
-        
-        if @donation.save
+    
+        if  @donation.valid_donation(@conference)
             redirect_to conference_path(@conference)
         else
+            @errors = ["Hello"]
             render 'new'
         end
   

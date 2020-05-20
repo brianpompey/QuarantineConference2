@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-</style>
-</head>
-<body>
 <h2>Register for <%= "#{@conference.name}"%> conference</h2>
 
 <% if @donation.errors.any? %>
+    hello
   <div id="error_explanation">
     <h2>
       Please try again! <%= pluralize(@donation.errors.count, "error") %>
@@ -16,12 +10,16 @@
  
     <ul>
     <% @donation.errors.full_messages.each do |msg| %>
+ 
       <li><%= msg %></li>
     <% end %>
     </ul>
   </div>
 <% end %>
 
+<% if @errors.empty? %>
+    <%= @errors %>
+<% end %>
 
 <%= form_with url: donations_path, model: Donation.new do |f| %>
 
@@ -47,7 +45,3 @@
 
 <% end %>
 
-
-
-</body>
-</html>
