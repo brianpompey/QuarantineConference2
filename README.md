@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the Quarantine Conference App!
 
-Things you may want to cover:
+As most (if not all) tech conferences this year have been either indefintely postponed,
+cancelled or reorganized as virtual, it's a pretty hard time for people who were really
+looking forward to getting out there, networking, finding their first or new job, and 
+just getting to spend some free time around like minded people. I know I'm one of them!
 
-* Ruby version
+This site focuses on those conferences that decided to reorganize to virtual.
+It can be difficult to get everyone's attention and let them know the details of a virtual conference.
+I know I have a hard time keeping up.
+So this site will be a central location where all organizers can post their conference info, all 
+users can register and be noticed by the organizations, and together we can try to make this all work.
 
-* System dependencies
+Admins of the site have the backdoor permissions to add conferences, view user info, and everything between.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Admin sign in info is:
+Email: admin@admin.com
+Password: administrator
