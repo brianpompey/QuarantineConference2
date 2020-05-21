@@ -1,14 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+div #error_explanation {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  margin-bottom: 15px;
+}
+
+</style>
+</head>
+<body>
 <h2>Register for <%= "#{@conference.name}"%> conference</h2>
 
 <% if @donation.errors.any? %>
+  <h2>HELLO</h2>
   <div id="error_explanation">
  
     <ul>
     <% @donation.errors.full_messages.each do |msg| %>
- 
       <li><%= msg %></li>
     <% end %>
     </ul>
+
   </div>
 <% end %>
 
@@ -37,3 +53,5 @@
 
 <% end %>
 
+</body>
+</html>
