@@ -6,7 +6,7 @@ class ConferencesController < ApplicationController
     end
    
 
-    def search_index
+    def search
         #search form on regular index page that redirects to this one
         #with the results of the search params
         @category = params[:category]

@@ -1,12 +1,7 @@
 <h2>Register for <%= "#{@conference.name}"%> conference</h2>
 
 <% if @donation.errors.any? %>
-    hello
   <div id="error_explanation">
-    <h2>
-      Please try again! <%= pluralize(@donation.errors.count, "error") %>
-      prohibited this post from being saved:
-    </h2>
  
     <ul>
     <% @donation.errors.full_messages.each do |msg| %>
@@ -17,9 +12,6 @@
   </div>
 <% end %>
 
-<% if @errors.empty? %>
-    <%= @errors %>
-<% end %>
 
 <%= form_with url: donations_path, model: Donation.new do |f| %>
 

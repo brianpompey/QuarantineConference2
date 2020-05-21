@@ -2,7 +2,9 @@ class UserInterestsController < ApplicationController
     before_action :require_login
     
     def new
+     #   byebug
         @user = current_user
+    #    @conferences = Conference.all
     end
 
     def create

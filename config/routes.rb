@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/conferences/:id', to: 'conferences#show'
 
-  get '/conferences/search', to: 'conferences#search_index'
+  
 
   resources :conferences, only: [:show] do
     resources :donations, only: [:new]
