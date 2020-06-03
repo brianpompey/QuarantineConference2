@@ -5,20 +5,20 @@ class ConferencesController < ApplicationController
         @conferences = Conference.all
     end
    
-
-    def search
+  # would love to add a search feature on index page...
+  #  def search
         #search form on regular index page that redirects to this one
         #with the results of the search params
-        @category = params[:category]
-        @conferences = Conference.searched(@category)
-    end
+  #      @category = params[:category]
+  #      @conferences = Conference.searched(@category)
+  #  end
 
     def show
         @conference = Conference.find(params[:id])
         if !current_user
             flash[:notice] = "SignUp/In to Register!"
-    #    elsif @conference.current_user
-    #        flash[:notice] = "Your're Refistered!"
+    #    elsif @conference.users(current_user)
+    #        flash[:notice] = "You're Registered!"
         end
 
     end

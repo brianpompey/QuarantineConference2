@@ -12,14 +12,15 @@ class DonationsController < ApplicationController
         @conference = Conference.find(params[:donation][:conference_id])
         @donation = Donation.new(donation_params)
     #    raise @donation.inspect
-        byebug
+    #    byebug
         
         
-        @donation.valid_donation(@conference)
-     #       redirect_to conference_path(@conference)
-      #  else
-      #      render 'new', errors: 
-      #  end
+        if @donation.valid_donation(@conference)
+            flash[:notice] = "You're Registered!"
+            redirect_to conference_path(@conference)
+        else
+            render 'new'
+        end
   
     end
 
