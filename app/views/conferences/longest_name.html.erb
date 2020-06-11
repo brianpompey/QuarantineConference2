@@ -1,2 +1,18 @@
 
-<%= @conference[:name] %>
+    <h2>This page just has the conference with longest name..</h2>
+
+
+
+    <% @conference.to_a.each do |conf| %>
+        <h3><a href="/conferences/<%= conf.id %>"><%= conf.name %>!!</h3>
+        <ol>
+            <li>Date: <%= conf.date.strftime("%b %d") %></li><br>
+            <li>Time: <%= conf.time.strftime("%I:%M%p") %></li><br>
+            <li>Min Donation: $ <%= conf.min_donation %></li><br>
+            <li>Keynote: <%= conf.keynote %></li><br>
+            <li>Cateory: <%= conf.category %></li><br>
+            <% conf.workshops.limit(1).each do |workshop| %>
+                <li>First Workshop: <%= workshop.name %> - <%= workshop.description %></li>
+            <% end %>
+        </ol>
+    <% end %>
