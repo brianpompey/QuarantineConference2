@@ -4,6 +4,7 @@ class Conference < ApplicationRecord
     has_many :workshops
     accepts_nested_attributes_for :workshops, reject_if: lambda {|attributes| attributes['name'].blank?}
     scope :searched, -> (category) {where("category LIKE ?", category)}
+    scope :longest_name, -> (name) {where('longest_name = ?') name.max_by(&:length) }
 
     
 end

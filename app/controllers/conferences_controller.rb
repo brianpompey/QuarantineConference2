@@ -23,6 +23,10 @@ class ConferencesController < ApplicationController
 
     end
 
+    def longest_name
+        @conference = Conference.longest_name
+    end
+
 
 
     private

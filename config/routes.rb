@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'conferences#index'
 
+  get '/conferences/longest_name', to: 'conferences#longest_name'
+
   get '/signup', to: 'users#new'
 
   post '/users', to: 'users#create'
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
 
   get '/conferences/:id', to: 'conferences#show'
+
 
   
 

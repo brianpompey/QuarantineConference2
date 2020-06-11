@@ -17,8 +17,13 @@ class Admin::ConferencesController < ApplicationController
         end
     end
 
+
     def admin_index
         @conferences = Conference.all
+    end
+
+    def destroy
+        @conference = Conference.find(params[:id])
     end
 
     private
